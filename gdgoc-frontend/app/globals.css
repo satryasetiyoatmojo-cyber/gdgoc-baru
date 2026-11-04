@@ -1,0 +1,184 @@
+
+@import "tailwindcss";
+
+/* ==========================================
+   1. COLOR SYSTEM
+========================================== */
+
+:root {
+  /* Brand Colors */
+  --brand-blue-500: #4284F4;
+  --brand-blue-primary: #4285F4;
+  --brand-green-500: #34A853;
+  --brand-red-500: #EA4335;
+  --brand-yellow-500: #F9AB00;
+
+  /* Neutral Colors */
+  --neutral-black: #000000;
+  --neutral-ink: #202024;
+  --neutral-dark-gray: #242424;
+  --neutral-gray: #5F6368;
+  --neutral-light-gray: #DADCE0;
+  --neutral-white: #FFFFFF;
+
+  /* Supporting Colors */
+  --support-blue-light: #EAF2FF;
+  --support-green-light: #EAF5ED;
+  --support-yellow-light: #FFF7DF;
+  --support-red-light: #FDEDEA;
+
+  /* Gradient Colors */
+  --gradient-blue-start: #4284F4;
+  --gradient-blue-end: #8AB4F8;
+
+  --gradient-green-start: #34A853;
+  --gradient-green-end: #81C995;
+
+  --gradient-yellow-start: #F9AB00;
+  --gradient-yellow-end: #FDE293;
+
+  /* Gradient Definitions */
+  --gradient-blue: linear-gradient(
+    90deg,
+    var(--gradient-blue-start),
+    var(--gradient-blue-end)
+  );
+
+  --gradient-green: linear-gradient(
+    90deg,
+    var(--gradient-green-start),
+    var(--gradient-green-end)
+  );
+
+  --gradient-yellow: linear-gradient(
+    90deg,
+    var(--gradient-yellow-start),
+    var(--gradient-yellow-end)
+  );
+
+  /* ==========================================
+     2. TYPOGRAPHY
+  ========================================== */
+
+  /* Font Family */
+  --font-primary: var(--font-google-sans), Arial, sans-serif;
+
+  /* Font Weights */
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* Line Height */
+  --line-height-body: 1.5;
+}
+
+/* ==========================================
+   3. TAILWIND CSS THEME
+========================================== */
+
+@theme inline {
+  /* Brand */
+  --color-brand-blue-500: var(--brand-blue-500);
+  --color-brand-blue-primary: var(--brand-blue-primary);
+  --color-brand-green-500: var(--brand-green-500);
+  --color-brand-red-500: var(--brand-red-500);
+  --color-brand-yellow-500: var(--brand-yellow-500);
+
+  /* Neutral */
+  --color-neutral-black: var(--neutral-black);
+  --color-neutral-ink: var(--neutral-ink);
+  --color-neutral-dark-gray: var(--neutral-dark-gray);
+  --color-neutral-gray: var(--neutral-gray);
+  --color-neutral-light-gray: var(--neutral-light-gray);
+  --color-neutral-white: var(--neutral-white);
+
+  /* Supporting */
+  --color-support-blue-light: var(--support-blue-light);
+  --color-support-green-light: var(--support-green-light);
+  --color-support-yellow-light: var(--support-yellow-light);
+  --color-support-red-light: var(--support-red-light);
+
+  /* Typography */
+  --font-sans: var(--font-primary);
+}
+
+/* ==========================================
+   4. GLOBAL RESET
+========================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  background-color: var(--neutral-white);
+  color: var(--neutral-ink);
+
+  font-family: var(--font-primary);
+  font-weight: var(--font-regular);
+  line-height: var(--line-height-body);
+
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================
+   5. GLOBAL ELEMENTS
+========================================== */
+
+button {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+/* ==========================================
+   TYPOGRAPHY SYSTEM
+========================================== */
+
+:root {
+  /* Font Family */
+  --font-primary: var(--font-google-sans), Arial, sans-serif;
+
+  /* Font Weight */
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* Display */
+  --text-display-size: ;
+  --text-display-line-height: ;
+  --text-display-letter-spacing: ;
+
+  /* Headings */
+  --text-heading-1-size: ;
+  --text-heading-2-size: ;
+  --text-heading-3-size: ;
+
+  /* Body */
+  --text-body-large-size: ;
+  --text-body-size: ;
+  --text-body-small-size: ;
+
+  /* Caption */
+  --text-caption-size: ;
+}
