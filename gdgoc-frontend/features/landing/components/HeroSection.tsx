@@ -41,7 +41,18 @@ export default function Hero() {
               {/* Primary CTA */}
               <Link
                 href="/overview"
-                className="inline-flex h-[52px] w-full shrink-0 items-center justify-center gap-3 whitespace-nowrap rounded-lg bg-brand-blue-500 px-5 text-base font-semibold text-neutral-white transition-colors hover:bg-brand-blue-primary sm:w-[280px]"
+                className="  inline-flex h-[52px] w-full shrink-0
+    items-center justify-center gap-3
+    whitespace-nowrap rounded-md
+    bg-brand-blue-500 px-4
+    text-[13px] font-semibold text-white
+    transition-colors duration-200 ease-in-out
+    hover:bg-brand-blue-hover
+    active:bg-brand-blue-active
+    focus-visible:outline-2
+    focus-visible:outline-offset-2
+    focus-visible:outline-brand-blue-500
+    sm:w-[230px]"
               >
                 <span>Find your learning track</span>
 
@@ -52,15 +63,14 @@ export default function Hero() {
 
               {/* Secondary CTA */}
               <Link
-                href="/about"
-                className="inline-flex h-[52px] w-full shrink-0 items-center justify-center gap-3 whitespace-nowrap rounded-lg border border-neutral-light-gray bg-neutral-white px-5 text-base font-medium text-brand-blue-500 transition-colors hover:bg-support-blue-light sm:w-[210px]"
-              >
-                <span>Get to know us</span>
-
-                <span aria-hidden="true" className="text-xl leading-none">
-                  →
-                </span>
-              </Link>
+                 href="/about"
+             className="inline-flex h-[52px] w-full shrink-0 items-center justify-center gap-3 whitespace-nowrap rounded-md border border-neutral-light-gray bg-neutral-white px-4 text-[13px] font-medium text-brand-blue-500 transition-colors hover:bg-support-blue-light sm:w-[177px]"
+               >
+            <span>Get to know us</span>
+            <span aria-hidden="true" className="text-base leading-none">
+              →
+            </span>
+          </Link>
 
             </div>
 

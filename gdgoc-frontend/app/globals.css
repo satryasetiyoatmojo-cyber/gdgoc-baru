@@ -9,6 +9,9 @@
   /* Brand Colors */
   --brand-blue-500: #4284F4;
   --brand-blue-primary: #4285F4;
+  --brand-blue-primary: #4285F4;
+  --brand-blue-hover: #1967D2;
+  --brand-blue-active: #174EA6;
   --brand-green-500: #34A853;
   --brand-red-500: #EA4335;
   --brand-yellow-500: #F9AB00;
@@ -81,6 +84,8 @@
   /* Brand */
   --color-brand-blue-500: var(--brand-blue-500);
   --color-brand-blue-primary: var(--brand-blue-primary);
+  --color-brand-blue-hover: var(--brand-blue-hover);
+  --color-brand-blue-active: var(--brand-blue-active);
   --color-brand-green-500: var(--brand-green-500);
   --color-brand-red-500: var(--brand-red-500);
   --color-brand-yellow-500: var(--brand-yellow-500);
@@ -135,12 +140,12 @@ body {
    5. GLOBAL ELEMENTS
 ========================================== */
 
+
 button {
   font: inherit;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
 }
 

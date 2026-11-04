@@ -33,7 +33,7 @@ export default function Navbar() {
 
     <a
       href="/overview"
-      className="flex h-[52px] w-[197px] shrink-0 items-center justify-center gap-3 rounded-md bg-brand-blue-500 text-sm font-medium text-white transition-colors hover:bg-brand-blue-primary"
+      className="flex h-[52px] shrink-0 items-center justify-center gap-4 rounded-lg bg-brand-blue-500 px-6 text-sm font-semibold text-white transition-colors hover:bg-brand-blue-primary"
     >
       Find your track
       <span aria-hidden="true">→</span>
