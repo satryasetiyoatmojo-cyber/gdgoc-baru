@@ -42,17 +42,17 @@ export default function Hero() {
               <Link
                 href="/overview"
                 className="  inline-flex h-[52px] w-full shrink-0
-    items-center justify-center gap-3
-    whitespace-nowrap rounded-md
-    bg-brand-blue-500 px-4
-    text-[13px] font-semibold text-white
-    transition-colors duration-200 ease-in-out
-    hover:bg-brand-blue-hover
-    active:bg-brand-blue-active
-    focus-visible:outline-2
-    focus-visible:outline-offset-2
-    focus-visible:outline-brand-blue-500
-    sm:w-[230px]"
+                items-center justify-center gap-3
+                whitespace-nowrap rounded-md
+                bg-brand-blue-500 px-4
+                text-[13px] font-semibold text-white
+                transition-colors duration-200 ease-in-out
+                hover:bg-brand-blue-hover
+                active:bg-brand-blue-active
+                focus-visible:outline-2
+                focus-visible:outline-offset-2
+                focus-visible:outline-brand-blue-500
+                sm:w-[230px]"
               >
                 <span>Find your learning track</span>
 
