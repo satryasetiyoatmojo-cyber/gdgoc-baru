@@ -5,6 +5,7 @@ import LearningTracksSection from "@/features/landing/components/LearningTracksS
 import LearningApproachSection from "@/features/landing/components/LearningApproachSection";
 import GettingStartedSection from "@/features/landing/components/GettingStartedSection";
 import ProjectBasedSection from "@/features/landing/components/ProjectBasedSection";
+import CommunityPromiseSection from "@/features/landing/components/CommunityPromiseSection";
 
 export default function HomePage() {
   return (
@@ -15,6 +16,7 @@ export default function HomePage() {
         <LearningApproachSection />
         <ProjectBasedSection />
         <GettingStartedSection />
+        <CommunityPromiseSection />
       </main>
   );
 }
