@@ -6,6 +6,7 @@ import LearningApproachSection from "@/features/landing/components/LearningAppro
 import GettingStartedSection from "@/features/landing/components/GettingStartedSection";
 import ProjectBasedSection from "@/features/landing/components/ProjectBasedSection";
 import CommunityPromiseSection from "@/features/landing/components/CommunityPromiseSection";
+import FAQSection from "@/features/landing/components/FAQSection";
 
 export default function HomePage() {
   return (
@@ -17,6 +18,7 @@ export default function HomePage() {
         <ProjectBasedSection />
         <GettingStartedSection />
         <CommunityPromiseSection />
+        <FAQSection />
       </main>
   );
 }
