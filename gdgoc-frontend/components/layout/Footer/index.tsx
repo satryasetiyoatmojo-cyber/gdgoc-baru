@@ -1,16 +1,69 @@
 
 import Link from "next/link";
+import {
+  SiInstagram,
+  SiGithub,
+} from "react-icons/si";
+
+import { FaLinkedin } from "react-icons/fa";
 
 import Logo from "@/components/shared/Logo";
+import {
+  getCommunityStats,
+  getNavigation,
+} from "@/lib/api/services";
 
-const footerNavigation = [
+const fallbackNavigation = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Overview", href: "/overview" },
   { label: "Contact", href: "/contact" },
 ];
 
-export default function Footer() {
+export default async function Footer() {
+  const [navigationResult, statsResult] = await Promise.allSettled([
+    getNavigation(),
+    getCommunityStats(),
+  ]);
+
+  const navigation =
+    navigationResult.status === "fulfilled" &&
+    navigationResult.value.success
+      ? navigationResult.value.data
+      : fallbackNavigation;
+
+  const social =
+    statsResult.status === "fulfilled" &&
+    statsResult.value.success
+      ? statsResult.value.data.social
+      : null;
+
+  if (navigationResult.status === "rejected") {
+    console.error("Failed to load footer navigation:", navigationResult.reason);
+  }
+
+  if (statsResult.status === "rejected") {
+    console.error("Failed to load footer social links:", statsResult.reason);
+  }
+
+    const socialLinks = [
+      {
+        label: "Instagram",
+        href: social?.instagram,
+        icon: SiInstagram,
+      },
+      {
+        label: "LinkedIn",
+        href: social?.linkedin,
+        icon: FaLinkedin,
+      },
+      {
+        label: "GitHub",
+        href: social?.github,
+        icon: SiGithub,
+      },
+    ];
+
   return (
     <footer className="border-t border-neutral-light-gray bg-[#F1F3F4]">
       <div className="mx-auto w-[calc(100%-72px)] max-w-[1200px] py-12">
@@ -36,9 +89,9 @@ export default function Footer() {
 
             <nav
               aria-label="Footer navigation"
-              className="mt-4 flex flex-col items-start gap-2"
+              className="mt-4 flex flex-col items-start gap-3"
             >
-              {footerNavigation.map((item) => (
+              {navigation.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
@@ -56,11 +109,30 @@ export default function Footer() {
               Keep in the loop
             </h2>
 
-            <p className="mt-4 text-sm text-brand-blue-500">
-              @gdgoc.ugm
-            </p>
+            <div className="mt-4 flex items-center gap-4">
+              {socialLinks.map((item) => {
+                const Icon = item.icon;
 
-            <p className="mt-3 text-sm text-neutral-gray">
+                if (!item.href) {
+                  return null;
+                }
+
+                return (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit our ${item.label}`}
+                    className="text-neutral-gray transition-colors duration-200 hover:text-brand-blue-500"
+                  >
+                    <Icon size={18} />
+                  </a>
+                );
+              })}
+            </div>
+
+            <p className="mt-4 text-xs leading-5 text-neutral-gray">
               Learn together. Build together.
             </p>
           </div>
@@ -69,7 +141,6 @@ export default function Footer() {
 
         {/* Footer Bottom */}
         <div className="mt-10 flex flex-col justify-between gap-4 border-t border-neutral-light-gray pt-6 sm:flex-row sm:items-center">
-
           <p className="text-xs text-neutral-gray">
             © GDGoC Universitas Gadjah Mada · 2026/2027
           </p>
@@ -77,7 +148,6 @@ export default function Footer() {
           <p className="text-xs text-neutral-gray">
             Made for the campus. Open to possibilities.
           </p>
-
         </div>
 
         {/* Google Color Accent */}
