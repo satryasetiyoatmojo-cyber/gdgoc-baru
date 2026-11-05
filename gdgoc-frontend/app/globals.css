@@ -29,7 +29,9 @@
   --support-green-light: #EAF5ED;
   --support-yellow-light: #FFF7DF;
   --support-red-light: #FDEDEA;
-
+  /*Support Warna */
+  --support-footer: #F1F3F4;
+  
   /* Gradient Colors */
   --gradient-blue-start: #4284F4;
   --gradient-blue-end: #8AB4F8;
@@ -103,7 +105,7 @@
   --color-support-green-light: var(--support-green-light);
   --color-support-yellow-light: var(--support-yellow-light);
   --color-support-red-light: var(--support-red-light);
-
+  --color-support-footer: var(--support-footer);
   /* Typography */
   --font-sans: var(--font-primary);
 }
@@ -187,3 +189,5 @@ img {
   /* Caption */
   --text-caption-size: ;
 }
+
+  
