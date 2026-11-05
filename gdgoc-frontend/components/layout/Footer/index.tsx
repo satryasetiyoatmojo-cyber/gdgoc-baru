@@ -1,11 +1,6 @@
 
 import Link from "next/link";
-import {
-  SiInstagram,
-  SiGithub,
-  SiYoutube,
-} from "react-icons/si";
-import { FaLinkedin } from "react-icons/fa";
+import { SiInstagram, SiYoutube } from "react-icons/si";
 
 import Logo from "@/components/shared/Logo";
 import {
@@ -59,20 +54,6 @@ export default async function Footer() {
       label: "Instagram",
       href: "https://www.instagram.com/gdgoc.ugm/",
       icon: SiInstagram,
-    },
-    {
-      label: "LinkedIn",
-      href: social?.linkedin
-        ? `https://www.linkedin.com/company/${social.linkedin}/`
-        : null,
-      icon: FaLinkedin,
-    },
-    {
-      label: "GitHub",
-      href: social?.github
-        ? `https://github.com/${social.github}`
-        : null,
-      icon: SiGithub,
     },
     {
       label: "YouTube",
@@ -135,11 +116,9 @@ export default async function Footer() {
               {instagramUsername}
             </a>
 
-            <div className="mt-3 flex flex-wrap items-center gap-4">
+            <div className="mt-3 flex items-center gap-4">
               {socialLinks.map((item) => {
                 const Icon = item.icon;
-
-                if (!item.href) return null;
 
                 return (
                   <a
@@ -149,9 +128,9 @@ export default async function Footer() {
                     rel="noopener noreferrer"
                     aria-label={`Visit our ${item.label}`}
                     title={item.label}
-                    className="text-neutral-gray transition-colors duration-200 hover:text-brand-blue-500"
+                    className="flex items-center justify-center text-neutral-gray transition-colors duration-200 hover:text-brand-blue-500"
                   >
-                    <Icon size={18} />
+                    <Icon size={24} aria-hidden="true" />
                   </a>
                 );
               })}
@@ -181,7 +160,6 @@ export default async function Footer() {
           <span className="flex-1 bg-brand-yellow-500" />
           <span className="flex-1 bg-brand-green-500" />
         </div>
-
       </div>
     </footer>
   );
