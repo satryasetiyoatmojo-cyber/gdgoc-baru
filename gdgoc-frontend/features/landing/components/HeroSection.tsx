@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import heroIllustration from "@/assets/images/hero-illustration.png";
-
+import { ArrowRightIcon } from "@/components/shared/icons";
 
 export default function Hero() {
   return (
@@ -56,9 +56,8 @@ export default function Hero() {
               >
                 <span>Find your learning track</span>
 
-                <span aria-hidden="true" className="text-xl leading-none">
-                  →
-                </span>
+                <ArrowRightIcon size={18} />
+
               </Link>
 
               {/* Secondary CTA */}
@@ -67,9 +66,7 @@ export default function Hero() {
              className="inline-flex h-[52px] w-full shrink-0 items-center justify-center gap-3 whitespace-nowrap rounded-md border border-neutral-light-gray bg-neutral-white px-4 text-[13px] font-medium text-brand-blue-500 transition-colors hover:bg-support-blue-light sm:w-[177px]"
                >
             <span>Get to know us</span>
-            <span aria-hidden="true" className="text-base leading-none">
-              →
-            </span>
+            <ArrowRightIcon size={18} />
           </Link>
 
             </div>
