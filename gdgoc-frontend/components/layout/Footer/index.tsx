@@ -3,8 +3,8 @@ import Link from "next/link";
 import {
   SiInstagram,
   SiGithub,
+  SiYoutube,
 } from "react-icons/si";
-
 import { FaLinkedin } from "react-icons/fa";
 
 import Logo from "@/components/shared/Logo";
@@ -39,30 +39,47 @@ export default async function Footer() {
       : null;
 
   if (navigationResult.status === "rejected") {
-    console.error("Failed to load footer navigation:", navigationResult.reason);
+    console.error(
+      "Failed to load footer navigation:",
+      navigationResult.reason,
+    );
   }
 
   if (statsResult.status === "rejected") {
-    console.error("Failed to load footer social links:", statsResult.reason);
+    console.error(
+      "Failed to load footer social links:",
+      statsResult.reason,
+    );
   }
 
-    const socialLinks = [
-      {
-        label: "Instagram",
-        href: social?.instagram,
-        icon: SiInstagram,
-      },
-      {
-        label: "LinkedIn",
-        href: social?.linkedin,
-        icon: FaLinkedin,
-      },
-      {
-        label: "GitHub",
-        href: social?.github,
-        icon: SiGithub,
-      },
-    ];
+  const instagramUsername = social?.instagram ?? "@gdgoc.ugm";
+
+  const socialLinks = [
+    {
+      label: "Instagram",
+      href: "https://www.instagram.com/gdgoc.ugm/",
+      icon: SiInstagram,
+    },
+    {
+      label: "LinkedIn",
+      href: social?.linkedin
+        ? `https://www.linkedin.com/company/${social.linkedin}/`
+        : null,
+      icon: FaLinkedin,
+    },
+    {
+      label: "GitHub",
+      href: social?.github
+        ? `https://github.com/${social.github}`
+        : null,
+      icon: SiGithub,
+    },
+    {
+      label: "YouTube",
+      href: "https://youtube.com/@gdgocugm",
+      icon: SiYoutube,
+    },
+  ];
 
   return (
     <footer className="border-t border-neutral-light-gray bg-[#F1F3F4]">
@@ -109,13 +126,20 @@ export default async function Footer() {
               Keep in the loop
             </h2>
 
-            <div className="mt-4 flex items-center gap-4">
+            <a
+              href="https://www.instagram.com/gdgoc.ugm/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-block text-sm text-brand-blue-500 transition-colors duration-200 hover:text-brand-blue-hover"
+            >
+              {instagramUsername}
+            </a>
+
+            <div className="mt-3 flex flex-wrap items-center gap-4">
               {socialLinks.map((item) => {
                 const Icon = item.icon;
 
-                if (!item.href) {
-                  return null;
-                }
+                if (!item.href) return null;
 
                 return (
                   <a
@@ -124,6 +148,7 @@ export default async function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Visit our ${item.label}`}
+                    title={item.label}
                     className="text-neutral-gray transition-colors duration-200 hover:text-brand-blue-500"
                   >
                     <Icon size={18} />
@@ -136,7 +161,6 @@ export default async function Footer() {
               Learn together. Build together.
             </p>
           </div>
-
         </div>
 
         {/* Footer Bottom */}
