@@ -4,7 +4,7 @@ import CommunityValues from "@/features/about/components/CommunityValues";
 import PeopleNotLabels from "@/features/about/components/PeopleNotLabels";
 import { Suspense } from "react";
 import CommunityResponsibility from "@/features/about/components/CommunityResponsibility";
-
+import FinalCTA from "@/components/shared/FinalCTA";
 export default function AboutPage() {
   return (
     <main>
@@ -26,6 +26,7 @@ export default function AboutPage() {
         <PeopleNotLabels />
       </Suspense>
       <CommunityResponsibility />
+      <FinalCTA />
     </main>
   );
 }
