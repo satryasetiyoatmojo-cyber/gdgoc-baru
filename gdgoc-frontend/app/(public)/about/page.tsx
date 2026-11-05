@@ -3,6 +3,7 @@ import WhyWeComeTogether from "@/features/about/components/WhyWeComeTogether";
 import CommunityValues from "@/features/about/components/CommunityValues";
 import PeopleNotLabels from "@/features/about/components/PeopleNotLabels";
 import { Suspense } from "react";
+import CommunityResponsibility from "@/features/about/components/CommunityResponsibility";
 
 export default function AboutPage() {
   return (
@@ -24,6 +25,7 @@ export default function AboutPage() {
       >
         <PeopleNotLabels />
       </Suspense>
+      <CommunityResponsibility />
     </main>
   );
 }
