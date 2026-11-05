@@ -7,6 +7,8 @@ import GettingStartedSection from "@/features/landing/components/GettingStartedS
 import ProjectBasedSection from "@/features/landing/components/ProjectBasedSection";
 import CommunityPromiseSection from "@/features/landing/components/CommunityPromiseSection";
 import FAQSection from "@/features/landing/components/FAQSection";
+import FinalCTASection from "@/features/landing/components/FinalCTASection";
+
 
 export default function HomePage() {
   return (
@@ -19,6 +21,7 @@ export default function HomePage() {
         <GettingStartedSection />
         <CommunityPromiseSection />
         <FAQSection />
+        <FinalCTASection />
       </main>
   );
 }
