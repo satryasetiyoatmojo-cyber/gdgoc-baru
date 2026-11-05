@@ -82,7 +82,7 @@ export default async function Footer() {
   ];
 
   return (
-    <footer className="border-t border-neutral-light-gray bg-[#F1F3F4]">
+    <footer className="border-t border-neutral-light-gray bg-support-footer">
       <div className="mx-auto w-[calc(100%-72px)] max-w-[1200px] py-12">
 
         {/* Main Footer */}
