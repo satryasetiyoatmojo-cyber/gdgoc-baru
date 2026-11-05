@@ -28,7 +28,7 @@ export default function AboutHero() {
           </span>
         </p>
 
-        <p className="mt-7 text-[10px] font-medium text-neutral-gray">
+        <p className="mt-7 text-[12px] font-medium text-neutral-gray">
           UNIVERSITAS GADJAH MADA
           <span className="mx-1">•</span>
           2026/2027
