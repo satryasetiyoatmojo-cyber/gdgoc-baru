@@ -1,13 +1,13 @@
-import Navbar from "@/components/layout/Navbar";
-import HeroSection from "@/features/landing/components/HeroSection";
+import Hero from "@/features/landing/components/HeroSection";
+import AboutSection from "@/features/landing/components/AboutSection";
+import LearningTracksSection from "@/features/landing/components/LearningTracksSection";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <>
-      <Navbar />
-      <main>
-        <HeroSection />
-      </main>
-    </>
+    <main>
+      <Hero />
+      <AboutSection />
+      <LearningTracksSection />
+    </main>
   );
 }

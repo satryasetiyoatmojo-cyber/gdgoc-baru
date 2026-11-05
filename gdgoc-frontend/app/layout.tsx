@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import localFont from "next/font/local";
 
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+
 import "./globals.css";
 
 const googleSans = localFont({
@@ -27,7 +30,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id" className={googleSans.variable}>
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

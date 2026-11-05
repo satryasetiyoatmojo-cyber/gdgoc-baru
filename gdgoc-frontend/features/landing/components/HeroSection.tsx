@@ -99,22 +99,24 @@ export default function Hero() {
         </div>
       </section>
 
-      {/* Community Values */}
       <section className="border-y border-neutral-light-gray">
         <div className="mx-auto flex w-[calc(100%-72px)] max-w-[1200px] flex-col justify-between gap-5 py-5 sm:flex-row sm:items-center">
 
-          <div className="flex items-center gap-2 text-xs font-medium text-neutral-ink">
-            <span className="h-2 w-2 rounded-sm bg-brand-blue-500" />
+          {/* Learn by doing */}
+          <div className="flex items-center gap-2 text-base font-medium text-neutral-ink">
+            <span className="h-2 w-2 shrink-0 rounded-[2px] bg-brand-blue-500" />
             Learn by doing
           </div>
 
-          <div className="flex items-center gap-2 text-xs font-medium text-neutral-ink">
-            <span className="h-2 w-2 rounded-sm bg-brand-red-500" />
+          {/* Connect across disciplines */}
+          <div className="flex items-center gap-2 text-base font-medium text-neutral-ink">
+            <span className="h-2 w-2 shrink-0 rounded-[2px] bg-brand-red-500" />
             Connect across disciplines
           </div>
 
-          <div className="flex items-center gap-2 text-xs font-medium text-neutral-ink">
-            <span className="h-2 w-2 rounded-sm bg-brand-green-500" />
+          {/* Build with purpose */}
+          <div className="flex items-center gap-2 text-base font-medium text-neutral-ink">
+            <span className="h-2 w-2 shrink-0 rounded-[2px] bg-brand-green-500" />
             Build with purpose
           </div>
 
