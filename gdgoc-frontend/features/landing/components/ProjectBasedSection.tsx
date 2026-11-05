@@ -1,5 +1,6 @@
 
 import Link from "next/link";
+import { LuCode } from "react-icons/lu";
 import { ArrowRightIcon } from "@/components/shared/icons";
 
 export default function ProjectBasedSection() {
@@ -9,20 +10,19 @@ export default function ProjectBasedSection() {
 
         {/* Project Illustration */}
         <div className="rounded-[24px] bg-support-yellow-light p-6 md:p-8">
-
           <div className="mb-5 flex items-center justify-between">
             <p className="text-[10px] font-medium uppercase tracking-wide text-neutral-gray">
               Idea → Prototype
             </p>
 
-            <span className="text-sm font-semibold text-brand-blue-500">
-              {"</>"}
-            </span>
+            <LuCode
+              className="h-5 w-5 text-brand-blue-primary"
+              aria-hidden="true"
+            />
           </div>
 
           {/* Mini Project Preview */}
           <div className="rounded-xl border border-neutral-light-gray bg-neutral-white p-5">
-
             <div className="mb-4 flex items-center gap-1.5">
               <span className="h-2 w-2 rounded-full bg-brand-red-500" />
               <span className="h-2 w-2 rounded-full bg-brand-yellow-500" />
@@ -52,7 +52,6 @@ export default function ProjectBasedSection() {
             <p className="mt-5 text-xs leading-5 text-neutral-gray">
               Start with a student need. Build a small, useful solution.
             </p>
-
           </div>
 
           <p className="mt-4 text-[9px] font-medium uppercase tracking-wide text-neutral-gray">
@@ -62,7 +61,6 @@ export default function ProjectBasedSection() {
 
         {/* Project Content */}
         <div className="max-w-[520px]">
-
           <p className="mb-4 flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-neutral-gray">
             <span className="h-2 w-2 rounded-full bg-brand-blue-500" />
             Build something that matters
@@ -90,7 +88,6 @@ export default function ProjectBasedSection() {
             <span>Explore project-based learning</span>
             <ArrowRightIcon size={16} />
           </Link>
-
         </div>
       </div>
     </section>
