@@ -1,72 +1,46 @@
 
 import Image from "next/image";
-import Link from "next/link";
+import overviewHeroImage from "@/assets/images/overviewhero.png";
 
-import type { LearningTrack } from "@/features/learning-tracks/types";
-import { ArrowRightIcon } from "@/components/shared/icons";
-
-interface TrackCardProps {
-  track: LearningTrack;
-}
-
-export default function TrackCard({ track }: TrackCardProps) {
+export default function OverviewHero() {
   return (
-    <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-light-gray bg-neutral-white">
+    <section className="bg-neutral-white px-6 py-12 md:px-10 md:py-16">
+      <div className="mx-auto grid max-w-7xl items-center gap-8 md:grid-cols-[1fr_420px] md:gap-12">
 
-      {/* Track Illustration */}
-      <div className="relative h-[232px] w-full overflow-hidden">
-        <Image
-          src={track.image}
-          alt={`Illustration for ${track.title}`}
-          fill
-          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-          className="object-cover object-top"
-        />
-      </div>
+        {/* Hero Content */}
+        <div className="md:translate-x-4">
+          <p className="mb-7 flex items-center gap-2 text-[10px] font-medium tracking-wide text-neutral-gray">
+            <span className="h-1.5 w-1.5 rounded-full bg-brand-blue-primary" />
+            OVERVIEW · PROGRAMS & LEARNING TRACKS
+          </p>
 
-      {/* Track Details */}
-      <div className="flex flex-1 flex-col p-6">
+          <h1 className="text-4xl leading-[1.1] font-bold tracking-tight text-neutral-ink md:text-[60px]">
+            Find your spark.
+            <span className="block text-brand-blue-primary">
+              Build your own path.
+            </span>
+          </h1>
 
-        {/* Track Label */}
-        <p className="text-[10px] font-semibold uppercase tracking-wide text-brand-blue-500">
-          {track.label}
-        </p>
-
-        {/* Track Title */}
-        <h3 className="mt-4 text-2xl font-bold leading-tight text-neutral-ink">
-          {track.title}
-        </h3>
-
-        {/* Track Description */}
-        <p className="mt-4 text-base leading-[1.6] text-neutral-gray">
-          {track.description}
-        </p>
-
-        {/* Track Topics */}
-        <div className="mt-5 border-t border-neutral-light-gray pt-4">
-          <p className="text-xs leading-5 text-neutral-gray">
-            {track.topics.join(" · ")}
+          <p className="mt-6 max-w-3xl text-base leading-7 text-neutral-gray md:text-lg md:leading-8">
+            Explore how research, creativity, and development connect.
+            Start with one interest. Grow through practice and the people
+            around you.
           </p>
         </div>
 
-        {/* Track Link */}
-        <Link
-          href={track.href}
-          className="
-            mt-4 inline-flex w-fit items-center gap-2
-            text-sm font-semibold text-brand-blue-500
-            transition-colors duration-200
-            hover:text-brand-blue-hover
-            focus-visible:outline-2
-            focus-visible:outline-offset-4
-            focus-visible:outline-brand-blue-500
-          "
-        >
-          <span>Explore this track</span>
-          <ArrowRightIcon size={18} />
-        </Link>
+        {/* Hero Illustration */}
+        <div className="mx-auto w-full max-w-[420px] md:-translate-x-6 md:translate-y-7">
+          <Image
+            src={overviewHeroImage}
+            alt="Research and discovery illustration"
+            width={447}
+            height={448}
+            priority
+            className="h-auto w-full object-contain"
+          />
+        </div>
 
       </div>
-    </article>
+    </section>
   );
 }
