@@ -17,3 +17,10 @@ export function ArrowRightIcon({
     />
   );
 }
+
+export {
+  LuBookOpen as BookOpenIcon,
+  LuCode as CodeIcon,
+  LuUsers as UsersIcon,
+  LuLightbulb as LightbulbIcon,
+} from "react-icons/lu";
