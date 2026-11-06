@@ -1,7 +1,9 @@
+import OverviewHero from "@/features/overview/components/OverviewHero";
+
 export default function OverviewPage() {
   return (
     <main>
-      <h1>Learning Tracks Overview</h1>
+      <OverviewHero />
     </main>
   );
 }
