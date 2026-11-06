@@ -31,7 +31,7 @@ export default function LearningFormatsSection() {
         </div>
 
         {/* Learning Format Cards */}
-        <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-7 md:grid-cols-2">
           {learningFormats.map((format) => (
             <LearningFormatCard
               key={format.id}
