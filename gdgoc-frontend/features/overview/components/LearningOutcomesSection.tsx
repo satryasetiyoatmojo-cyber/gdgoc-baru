@@ -5,7 +5,7 @@ export default function LearningOutcomesSection() {
   return (
     <section
       aria-labelledby="learning-outcomes-heading"
-      className="bg-neutral-white py-16 md:py-20"
+      className="bg-neutral-white py-16 md:py-8"
     >
       <div className="mx-auto w-[calc(100%-72px)] max-w-[1200px]">
         {/* Section Heading */}
