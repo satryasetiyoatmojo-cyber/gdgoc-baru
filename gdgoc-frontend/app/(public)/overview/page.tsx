@@ -5,6 +5,7 @@ import LearningOutcomesSection from "@/features/overview/components/LearningOutc
 import LearningFormatsSection from "@/features/overview/components/LearningFormatsSection";
 import { Suspense } from "react";
 import LearningJourneySection from "@/features/overview/components/LearningJourneySection";
+import StartingPointSection from "@/features/overview/components/StartingPointSection";
 
 export default function OverviewPage() {
   return (
@@ -27,6 +28,7 @@ export default function OverviewPage() {
     >
       <LearningJourneySection />
     </Suspense>
+    <StartingPointSection />
     </main>
   );
 }
