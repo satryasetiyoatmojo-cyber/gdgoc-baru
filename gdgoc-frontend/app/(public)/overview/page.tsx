@@ -3,6 +3,8 @@ import OverviewNavigation from "@/features/overview/components/OverviewNavigatio
 import LearningTracksSection from "@/features/landing/components/LearningTracksSection";
 import LearningOutcomesSection from "@/features/overview/components/LearningOutcomesSection";
 import LearningFormatsSection from "@/features/overview/components/LearningFormatsSection";
+import { Suspense } from "react";
+import LearningJourneySection from "@/features/overview/components/LearningJourneySection";
 
 export default function OverviewPage() {
   return (
@@ -12,6 +14,19 @@ export default function OverviewPage() {
       <LearningTracksSection />
       <LearningOutcomesSection />
       <LearningFormatsSection />
+      <Suspense
+      fallback={
+        <section className="bg-neutral-white py-16 md:py-20">
+          <div className="mx-auto w-[calc(100%-72px)] max-w-[1200px]">
+            <p className="text-sm text-neutral-gray">
+              Loading learning journey...
+            </p>
+          </div>
+        </section>
+      }
+    >
+      <LearningJourneySection />
+    </Suspense>
     </main>
   );
 }
