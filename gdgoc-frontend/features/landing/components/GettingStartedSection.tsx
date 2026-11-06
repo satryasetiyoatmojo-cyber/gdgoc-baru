@@ -1,5 +1,6 @@
 
 import { gettingStartedSteps } from "@/features/landing/data/getting-started";
+import JourneySteps from "@/components/shared/JourneySteps";
 
 export default function GettingStartedSection() {
   return (
@@ -27,25 +28,7 @@ export default function GettingStartedSection() {
         </div>
 
         {/* Getting Started Steps */}
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-10">
-          {gettingStartedSteps.map((item) => (
-            <article key={item.id} className="flex flex-col">
-              <span className="text-4xl font-bold leading-none text-brand-blue-500 md:text-[44px]">
-                {item.number}
-              </span>
-
-              <div className="mt-6 border-t border-neutral-light-gray pt-5">
-                <h3 className="text-xl font-semibold leading-snug text-neutral-ink md:text-2xl">
-                  {item.title}
-                </h3>
-
-                <p className="mt-4 text-sm leading-6 text-neutral-gray md:text-base">
-                  {item.description}
-                </p>
-              </div>
-            </article>
-          ))}
-        </div>
+        <JourneySteps steps={gettingStartedSteps} columns={3} />
       </div>
     </section>
   );
