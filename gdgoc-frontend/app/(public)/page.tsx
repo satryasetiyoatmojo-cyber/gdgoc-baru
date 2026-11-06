@@ -9,7 +9,8 @@ import CommunityPromiseSection from "@/features/landing/components/CommunityProm
 import FAQSection from "@/features/landing/components/FAQSection";
 import FinalCTA from "@/components/shared/FinalCTA";
 
-
+import { Suspense } from "react";
+import FAQLoading from "@/features/landing/components/FAQLoading";
 export default function HomePage() {
   return (
       <main>
@@ -20,7 +21,10 @@ export default function HomePage() {
         <ProjectBasedSection />
         <GettingStartedSection />
         <CommunityPromiseSection />
-        <FAQSection />
+        
+        
+        <Suspense fallback={<FAQLoading />}><FAQSection />
+        </Suspense>
         <FinalCTA />
       </main>
   );
