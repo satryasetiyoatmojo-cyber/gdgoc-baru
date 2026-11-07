@@ -23,4 +23,10 @@ export {
   LuCode as CodeIcon,
   LuUsers as UsersIcon,
   LuLightbulb as LightbulbIcon,
+
+  // Contact icons
+  LuArrowUpRight as ArrowUpRightIcon,
+  LuPlus as PlusIcon,
+  LuDiamond as DiamondIcon,
+  LuCircleHelp as CircleHelpIcon,
 } from "react-icons/lu";
