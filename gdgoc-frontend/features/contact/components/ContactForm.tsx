@@ -181,16 +181,17 @@ export default function ContactForm({ categories }: ContactFormProps) {
         </div>
 
         {/* Submit */}
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+
+        <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
           <button
             type="button"
-            className="inline-flex w-fit items-center gap-3 rounded-lg bg-brand-blue-primary px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-blue-hover"
+            className="inline-flex w-fit items-center gap-3 rounded-lg bg-brand-blue-primary px-6 py-3.5 text-base font-semibold text-white transition hover:bg-brand-blue-hover"
           >
             Send message
             <span aria-hidden="true">→</span>
           </button>
 
-          <p className="max-w-[180px] text-xs leading-4 text-neutral-gray">
+          <p className="max-w-[200px] text-xs leading-5 text-neutral-gray sm:text-left">
             Please don’t include passwords or sensitive personal information.
           </p>
         </div>
