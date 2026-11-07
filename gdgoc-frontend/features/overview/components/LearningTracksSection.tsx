@@ -7,7 +7,7 @@ import { ArrowRightIcon } from "@/components/shared/icons";
 export default function LearningTracksSection() {
   return (
     <section
-      id="tracks"
+      id="learning-tracks"
       aria-labelledby="tracks-heading"
       className="py-16 md:py-20"
     >
