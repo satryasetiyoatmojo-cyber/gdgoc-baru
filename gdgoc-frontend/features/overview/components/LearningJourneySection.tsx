@@ -10,16 +10,13 @@ export default async function LearningJourneySection() {
       throw new Error("Failed to load learning journey");
     }
 
-    const steps = response.data.map((item) => ({
-      id: item.id,
-      number: String(item.step).padStart(2, "0"),
-      title: item.title,
-      description: item.description,
-    }));
-
+    const steps = [];
     if (steps.length === 0) {
       return (
-        <section className="bg-neutral-white py-16 md:py-20">
+        <section
+            id="learning-journey"
+            className="bg-neutral-white py-16 md:py-20"
+          >
           <div className="mx-auto w-[calc(100%-72px)] max-w-[1200px]">
             <p className="text-sm text-neutral-gray">
               Learning journey is not available yet.
