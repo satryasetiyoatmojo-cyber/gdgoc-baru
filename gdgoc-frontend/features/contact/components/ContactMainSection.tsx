@@ -27,7 +27,7 @@ export default async function ContactMainSection() {
         </div>
 
         {/* Contact Form */}
-        <ContactForm />
+        <ContactForm categories={response.data} />
       </section>
     );
   } catch (error) {
