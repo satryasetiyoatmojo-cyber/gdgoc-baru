@@ -190,4 +190,8 @@ img {
   --text-caption-size: ;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
   
