@@ -6,6 +6,7 @@ import LearningFormatsSection from "@/features/overview/components/LearningForma
 import { Suspense } from "react";
 import LearningJourneySection from "@/features/overview/components/LearningJourneySection";
 import StartingPointSection from "@/features/overview/components/StartingPointSection";
+import FinalCTASection from "@/features/landing/components/FinalCTASection";
 
 export default function OverviewPage() {
   return (
@@ -29,6 +30,7 @@ export default function OverviewPage() {
       <LearningJourneySection />
     </Suspense>
     <StartingPointSection />
+    <FinalCTASection />
     </main>
   );
 }
