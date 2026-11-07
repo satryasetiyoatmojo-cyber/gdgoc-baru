@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 
 import { learningTracks } from "@/features/learning-tracks/data/learning-tracks";
@@ -7,7 +8,7 @@ import { ArrowRightIcon } from "@/components/shared/icons";
 export default function LearningTracksSection() {
   return (
     <section
-      id="tracks"
+      id="learning-tracks"
       aria-labelledby="tracks-heading"
       className="py-16 md:py-20"
     >
@@ -48,6 +49,7 @@ export default function LearningTracksSection() {
             </Link>
           </div>
         </div>
+
         {/* Learning Track Cards */}
         <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {learningTracks.map((track) => (
