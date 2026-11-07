@@ -20,9 +20,9 @@ export default async function LearningJourneySection() {
     if (steps.length === 0) {
       return (
         <section
-            id="learning-journey"
-            className="bg-neutral-white py-16 md:py-20"
-          >
+          id="learning-journey"
+          className="bg-neutral-white py-16 md:py-20"
+        >
           <div className="mx-auto w-[calc(100%-72px)] max-w-[1200px]">
             <p className="text-sm text-neutral-gray">
               Learning journey is not available yet.
@@ -34,6 +34,7 @@ export default async function LearningJourneySection() {
 
     return (
       <section
+        id="learning-journey"
         aria-labelledby="learning-journey-heading"
         className="bg-neutral-white py-16 md:py-20"
       >
@@ -62,7 +63,10 @@ export default async function LearningJourneySection() {
     console.error("Failed to load learning journey:", error);
 
     return (
-      <section className="bg-neutral-white py-16 md:py-20">
+      <section
+        id="learning-journey"
+        className="bg-neutral-white py-16 md:py-20"
+      >
         <div className="mx-auto w-[calc(100%-72px)] max-w-[1200px]">
           <p className="text-sm text-neutral-gray">
             Unable to load the learning journey. Please try again later.
