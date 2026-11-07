@@ -2,6 +2,7 @@
 import { getInquiryCategories } from "@/lib/api/services";
 import InquiryCategoryList from "./InquiryCategoryList";
 import ContactForm from "./ContactForm";
+import CommunityInvitation from "./CommunityInvitation";
 
 export default async function ContactMainSection() {
   try {
@@ -24,6 +25,8 @@ export default async function ContactMainSection() {
           </p>
 
           <InquiryCategoryList categories={response.data} />
+
+          <CommunityInvitation />
         </div>
 
         {/* Contact Form */}
