@@ -10,7 +10,13 @@ export default async function LearningJourneySection() {
       throw new Error("Failed to load learning journey");
     }
 
-    const steps = [];
+    const steps = response.data.map((item) => ({
+      id: item.id,
+      number: String(item.step).padStart(2, "0"),
+      title: item.title,
+      description: item.description,
+    }));
+
     if (steps.length === 0) {
       return (
         <section
