@@ -1,5 +1,6 @@
 
 import Link from "next/link";
+import { ArrowRightIcon } from "@/components/shared/icons";
 
 export default function CommunityInvitation() {
   return (
@@ -32,7 +33,7 @@ export default function CommunityInvitation() {
         className="mt-4 inline-flex items-center gap-3 text-sm font-semibold text-brand-blue-primary transition-colors hover:text-brand-blue-hover"
       >
         Find @gdgoc.ugm
-        <span aria-hidden="true">→</span>
+        <ArrowRightIcon size={16} />
       </Link>
     </section>
   );

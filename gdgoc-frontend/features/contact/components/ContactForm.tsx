@@ -7,7 +7,7 @@ type ContactFormProps = {
 
 export default function ContactForm({ categories }: ContactFormProps) {
   return (
-    <section className="rounded-2xl bg-[#f1f3f4] p-6 md:p-9">
+    <section className="rounded-2xl bg-support-footer p-6 md:p-9">
       {/* Form Header */}
       <div className="flex items-center justify-between">
         <h2 className="text-2xl font-bold text-neutral-ink md:text-3xl">

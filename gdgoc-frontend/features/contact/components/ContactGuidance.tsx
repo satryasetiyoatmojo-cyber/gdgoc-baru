@@ -1,5 +1,6 @@
 
 import Link from "next/link";
+import { ArrowRightIcon } from "@/components/shared/icons";
 import { contactGuidance } from "@/features/contact/data/contact-guidance";
 
 export default function ContactGuidance() {
@@ -22,7 +23,7 @@ export default function ContactGuidance() {
             className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand-blue-primary transition-colors hover:text-brand-blue-hover"
           >
             Explore the programs first
-            <span aria-hidden="true">→</span>
+            <ArrowRightIcon size={16} />
           </Link>
         </div>
 
