@@ -8,7 +8,9 @@ import LearningJourneySection from "@/features/overview/components/LearningJourn
 import StartingPointSection from "@/features/overview/components/StartingPointSection";
 import FinalCTASection from "@/features/landing/components/FinalCTASection";
 
-export default function OverviewPage() {
+export default async function OverviewPage() {
+
+
   return (
     <main>
       <OverviewHero />
