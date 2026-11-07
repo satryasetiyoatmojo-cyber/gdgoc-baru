@@ -1,5 +1,6 @@
 import ContactHero from "@/features/contact/components/ContactHero";
 import ContactMainSection from "@/features/contact/components/ContactMainSection";
+import ContactGuidance from "@/features/contact/components/ContactGuidance";
 
 export default function ContactPage() {
   return (
@@ -8,6 +9,8 @@ export default function ContactPage() {
         <ContactHero />
         <ContactMainSection />
       </section>
+
+      <ContactGuidance />
     </main>
   );
 }
