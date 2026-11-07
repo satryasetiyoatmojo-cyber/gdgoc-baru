@@ -4,6 +4,7 @@ import { ArrowRightIcon } from "@/components/shared/icons";
 import type { ReactNode } from "react";
 
 type CommunityBannerProps = {
+  id?: string;
   title: ReactNode;
   description: string;
   variant: "green" | "yellow";
@@ -37,6 +38,7 @@ const bannerVariants = {
 };
 
 export default function CommunityBanner({
+  id,
   title,
   description,
   variant,
@@ -69,7 +71,10 @@ export default function CommunityBanner({
   };
 
   return (
-    <section className={`${styles.background} py-14 md:py-16`}>
+    <section
+      id={id}
+      className={`${styles.background} py-14 md:py-16`}
+    >
       <div
         className={`mx-auto w-[calc(100%-48px)] max-w-[1200px] md:w-[calc(100%-72px)] ${
           isSplit
