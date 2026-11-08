@@ -19,8 +19,10 @@ export default function Navbar() {
 
   return (
     <header className="w-full border-b border-neutral-light-gray bg-neutral-white">
-      <nav className="mx-auto flex min-h-[104px] w-[calc(100%-72px)] max-w-[1200px] items-center justify-between gap-6">
-        <Logo />
+      <nav className="mx-auto flex min-h-[88px] w-[calc(100%-32px)] max-w-[1200px] items-center justify-between gap-2 sm:w-[calc(100%-48px)] md:min-h-[104px] md:w-[calc(100%-72px)] md:gap-6">
+        <div className="min-w-0 flex-1 overflow-hidden md:flex-none">
+          <Logo />
+        </div>
 
         <div className="hidden items-center gap-3 md:flex">
           {navigation.map((item) => {
@@ -45,9 +47,11 @@ export default function Navbar() {
 
         <Link
           href="/overview"
-          className="flex h-[52px] shrink-0 items-center justify-center gap-4 rounded-lg bg-brand-blue-primary px-6 text-sm font-semibold text-neutral-white transition-colors hover:bg-brand-blue-hover active:bg-brand-blue-active focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-primary"
+          className="flex h-11 shrink-0 items-center justify-center gap-2 
+          rounded-lg bg-brand-blue-primary px-3 text-xs font-semibold text-neutral-white transition-colors hover:bg-brand-blue-hover active:bg-brand-blue-active focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue-primary sm:h-[52px] sm:gap-4 sm:px-6 sm:text-sm"
         >
-          Find your track
+          <span className="md:hidden">Tracks</span>
+          <span className="hidden md:inline">Find your track</span>
           <ArrowRightIcon size={18} />
         </Link>
       </nav>
