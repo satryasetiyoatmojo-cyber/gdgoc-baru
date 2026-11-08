@@ -1,13 +1,20 @@
+
 "use client";
 
 import type { InquiryCategory } from "@/types/api";
-import { ArrowRightIcon } from "@/components/shared/icons";
-import { ArrowUpRightIcon } from "@/components/shared/icons";
+import { ArrowRightIcon, ArrowUpRightIcon } from "@/components/shared/icons";
+
 type ContactFormProps = {
   categories: InquiryCategory[];
+  selectedCategoryId: string;
+  onCategoryChange: (id: string) => void;
 };
 
-export default function ContactForm({ categories }: ContactFormProps) {
+export default function ContactForm({
+  categories,
+  selectedCategoryId,
+  onCategoryChange,
+}: ContactFormProps) {
   return (
     <section className="rounded-2xl bg-support-footer p-6 md:p-9">
       {/* Form Header */}
@@ -121,7 +128,8 @@ export default function ContactForm({ categories }: ContactFormProps) {
             id="category"
             name="category"
             required
-            defaultValue={categories[0]?.id ?? ""}
+            value={selectedCategoryId}
+            onChange={(event) => onCategoryChange(event.target.value)}
             className="w-full rounded-lg border border-neutral-light-gray bg-neutral-white px-3 py-3 text-sm text-neutral-gray outline-none focus:border-brand-blue-primary"
           >
             {categories.map((category) => (
@@ -190,7 +198,6 @@ export default function ContactForm({ categories }: ContactFormProps) {
         </div>
 
         {/* Submit */}
-
         <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
           <button
             type="submit"

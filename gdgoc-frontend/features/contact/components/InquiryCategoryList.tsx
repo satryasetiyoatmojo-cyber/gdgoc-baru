@@ -10,6 +10,8 @@ import {
 
 type InquiryCategoryListProps = {
   categories: InquiryCategory[];
+  selectedId: string;
+  onSelect: (id: string) => void;
 };
 
 const categoryIcons = {
@@ -21,36 +23,44 @@ const categoryIcons = {
 
 export default function InquiryCategoryList({
   categories,
+  selectedId,
+  onSelect,
 }: InquiryCategoryListProps) {
   return (
     <div className="space-y-3">
-      {categories.map((category, index) => {
-        const Icon = categoryIcons[category.id as keyof typeof categoryIcons]
-          ?? CircleHelpIcon;
+      {categories.map((category) => {
+        const Icon =
+          categoryIcons[category.id as keyof typeof categoryIcons] ??
+          CircleHelpIcon;
+
+        const isSelected = selectedId === category.id;
 
         return (
-          <div
+          <button
             key={category.id}
-            className={`flex items-start gap-4 rounded-xl border p-4 ${
-              index === 0
+            type="button"
+            onClick={() => onSelect(category.id)}
+            aria-pressed={isSelected}
+            className={`flex w-full items-start gap-4 rounded-xl border p-4 text-left transition ${
+              isSelected
                 ? "border-transparent bg-[#e8f0fe]"
-                : "border-neutral-light-gray bg-neutral-white"
+                : "border-neutral-light-gray bg-neutral-white hover:bg-neutral-50"
             }`}
           >
             <span className="mt-0.5 text-brand-blue-primary">
               <Icon size={20} aria-hidden="true" />
             </span>
 
-            <div>
-              <h3 className="text-sm font-semibold text-neutral-ink">
+            <span>
+              <span className="block text-sm font-semibold text-neutral-ink">
                 {category.label}
-              </h3>
+              </span>
 
-              <p className="mt-1 text-xs leading-5 text-neutral-gray">
+              <span className="mt-1 block text-xs leading-5 text-neutral-gray">
                 {category.description}
-              </p>
-            </div>
-          </div>
+              </span>
+            </span>
+          </button>
         );
       })}
     </div>
