@@ -3,6 +3,9 @@ import Link from "next/link";
 import { HiArrowRight } from "react-icons/hi2";
 
 import FAQAccordion from "@/features/landing/components/FAQAccordion";
+import FAQEmpty from "@/features/landing/components/FAQEmpty";
+import FAQError from "@/features/landing/components/FAQError";
+
 import { getFaqs } from "@/lib/api/services";
 import type { FAQ } from "@/types/api";
 
@@ -17,28 +20,22 @@ export default async function FAQSection() {
   try {
     const response = await getFaqs();
 
+    // Memeriksa keberhasilan respons API.
     if (!response.success) {
       throw new Error("Failed to load FAQs");
     }
 
-    // Memilih tiga FAQ dari data API tanpa mengubah kontennya.
+    // Memilih FAQ berdasarkan ID tanpa mengubah konten API.
     const faqs: FAQ[] = selectedFaqIds
       .map((id) => response.data.find((item) => item.id === id))
       .filter((item): item is FAQ => item !== undefined);
 
     // Empty State
     if (faqs.length === 0) {
-      return (
-        <section className="bg-neutral-white py-16 md:py-20">
-          <div className="mx-auto w-[calc(100%-48px)] max-w-[1200px] md:w-[calc(100%-72px)]">
-            <p className="text-sm text-neutral-gray" role="status">
-              Frequently asked questions are currently unavailable.
-            </p>
-          </div>
-        </section>
-      );
+      return <FAQEmpty />;
     }
 
+    // Success State
     return (
       <section
         aria-labelledby="faq-heading"
@@ -82,15 +79,6 @@ export default async function FAQSection() {
     console.error("Failed to load FAQs:", error);
 
     // Error State
-    return (
-      <section className="bg-neutral-white py-16 md:py-20">
-        <div className="mx-auto w-[calc(100%-48px)] max-w-[1200px] md:w-[calc(100%-72px)]">
-          <p className="text-sm text-neutral-gray" role="status">
-            Frequently asked questions are temporarily unavailable.
-            Please try again later.
-          </p>
-        </div>
-      </section>
-    );
+    return <FAQError />;
   }
 }
