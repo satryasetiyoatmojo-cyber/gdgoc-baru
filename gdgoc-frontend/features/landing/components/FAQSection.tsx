@@ -4,13 +4,30 @@ import { HiArrowRight } from "react-icons/hi2";
 
 import FAQAccordion from "@/features/landing/components/FAQAccordion";
 import { getFaqs } from "@/lib/api/services";
+import type { FAQ } from "@/types/api";
+
+// FAQ yang dipilih berdasarkan kebutuhan desain Figma.
+const selectedFaqIds = [
+  "no-experience",
+  "major-requirement",
+  "find-track",
+];
 
 export default async function FAQSection() {
   try {
     const response = await getFaqs();
-    const faqs = response.data;
 
-    if (!response.success || faqs.length === 0) {
+    if (!response.success) {
+      throw new Error("Failed to load FAQs");
+    }
+
+    // Memilih tiga FAQ dari data API tanpa mengubah kontennya.
+    const faqs: FAQ[] = selectedFaqIds
+      .map((id) => response.data.find((item) => item.id === id))
+      .filter((item): item is FAQ => item !== undefined);
+
+    // Empty State
+    if (faqs.length === 0) {
       return (
         <section className="bg-neutral-white py-16 md:py-20">
           <div className="mx-auto w-[calc(100%-48px)] max-w-[1200px] md:w-[calc(100%-72px)]">
@@ -28,7 +45,6 @@ export default async function FAQSection() {
         className="bg-neutral-white py-16 md:py-24"
       >
         <div className="mx-auto grid w-[calc(100%-48px)] max-w-[1200px] grid-cols-1 gap-10 md:w-[calc(100%-72px)] md:grid-cols-[0.8fr_1.2fr] md:gap-16">
-
           {/* FAQ Introduction */}
           <div className="max-w-[300px]">
             <p className="mb-5 flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-neutral-gray">
@@ -59,13 +75,13 @@ export default async function FAQSection() {
           <div>
             <FAQAccordion faqs={faqs} />
           </div>
-
         </div>
       </section>
     );
   } catch (error) {
     console.error("Failed to load FAQs:", error);
 
+    // Error State
     return (
       <section className="bg-neutral-white py-16 md:py-20">
         <div className="mx-auto w-[calc(100%-48px)] max-w-[1200px] md:w-[calc(100%-72px)]">

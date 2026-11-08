@@ -11,8 +11,8 @@ interface FAQAccordionProps {
 }
 
 export default function FAQAccordion({ faqs }: FAQAccordionProps) {
-  const [activeIds, setActiveIds] = useState<Set<string>>(
-    () => new Set(faqs.map((item) => item.id)),
+    const [activeIds, setActiveIds] = useState<Set<string>>(
+    () => new Set(),
   );
 
   const toggleFAQ = (id: string) => {
