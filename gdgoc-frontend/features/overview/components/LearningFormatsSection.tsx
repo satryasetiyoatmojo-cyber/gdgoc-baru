@@ -7,9 +7,9 @@ export default function LearningFormatsSection() {
     <section
       id="learning-formats"
       aria-labelledby="learning-formats-heading"
-      className="bg-[#f1f3f4] py-10 md:py-12"
+      className="bg-support-footer py-10 md:py-12"
     >
-      <div className="mx-auto w-[calc(100%-72px)] max-w-[1200px]">
+      <div className="mx-auto w-[calc(100%-32px)] max-w-[1200px] sm:w-[calc(100%-48px)] lg:w-[calc(100%-72px)]">
         {/* Section Header */}
         <div>
           <p className="mb-3 flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-neutral-gray">
