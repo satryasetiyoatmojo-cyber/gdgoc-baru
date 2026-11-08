@@ -4,6 +4,7 @@ import { learningOutcomes } from "@/features/overview/data/learning-outcomes";
 export default function LearningOutcomesSection() {
   return (
     <section
+      id="learning-outcomes"
       aria-labelledby="learning-outcomes-heading"
       className="bg-neutral-white py-16 md:py-8"
     >
@@ -38,7 +39,8 @@ export default function LearningOutcomesSection() {
                 {learningOutcomes.map((item) => (
                   <tr
                     key={item.id}
-                    className="border-t border-neutral-light-gray"
+                    id={`learning-outcome-${item.id}`}
+                    className="border-t border-neutral-light-gray scroll-mt-24"
                   >
                     <th
                       scope="row"
