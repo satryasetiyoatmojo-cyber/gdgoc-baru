@@ -47,7 +47,7 @@ export default function LearningFormatCard({
   const colors = colorMap[format.color];
 
   return (
-    <article className="flex h-full items-start gap-6 rounded-2xl bg-neutral-white p-7">
+    <article className="flex h-full items-start gap-4 rounded-2xl bg-neutral-white p-4 sm:gap-6 sm:p-7">
       {/* Format Icon */}
       <div
         className={`flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-xl ${colors.background}`}
