@@ -8,10 +8,20 @@ export default async function ContactMainSection() {
   try {
     const response = await getInquiryCategories();
 
-    if (!response.success) {
-      throw new Error("Failed to load inquiry categories");
+    if (!response.success || !Array.isArray(response.data)) {
+    throw new Error("Failed to load inquiry categories");
     }
-
+    // Empty State
+    if (response.data.length === 0) {
+      return (
+        <section className="mt-14 rounded-xl border border-neutral-light-gray p-6">
+          <p className="text-sm text-neutral-gray">
+            Inquiry categories are not available yet. Please try again later.
+          </p>
+          <CommunityInvitation />
+        </section>
+      );
+    }
     return (
       <section className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-[0.8fr_1.28fr] md:gap-16">
         {/* Inquiry Categories */}
