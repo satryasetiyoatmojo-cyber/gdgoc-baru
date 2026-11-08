@@ -10,6 +10,7 @@ export async function apiRequest<T>(
     },
     next: {
       revalidate: 300,
+      ...options?.next,
     },
   });
 
