@@ -1,6 +1,7 @@
 
 import type { InquiryCategory } from "@/types/api";
-
+import { ArrowRightIcon } from "@/components/shared/icons";
+import { ArrowUpRightIcon } from "@/components/shared/icons";
 type ContactFormProps = {
   categories: InquiryCategory[];
 };
@@ -14,9 +15,10 @@ export default function ContactForm({ categories }: ContactFormProps) {
           Send us a message
         </h2>
 
-        <span aria-hidden="true" className="text-2xl text-brand-blue-primary">
-          ↗
-        </span>
+        <ArrowUpRightIcon
+          size={24}
+          className="text-brand-blue-primary"
+        />
       </div>
 
       <p className="mt-4 text-xs text-neutral-gray">
@@ -188,7 +190,7 @@ export default function ContactForm({ categories }: ContactFormProps) {
             className="inline-flex w-fit items-center gap-3 rounded-lg bg-brand-blue-primary px-6 py-3.5 text-base font-semibold text-white transition hover:bg-brand-blue-hover"
           >
             Send message
-            <span aria-hidden="true">→</span>
+            <ArrowRightIcon size={18} />
           </button>
 
           <p className="max-w-[200px] text-xs leading-5 text-neutral-gray sm:text-left">
