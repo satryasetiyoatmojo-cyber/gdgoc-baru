@@ -1,10 +1,11 @@
-
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import localFont from "next/font/local";
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { getNavigation } from "@/lib/api/services";
+import type { NavigationItem } from "@/types/api";
 
 import "./globals.css";
 
@@ -23,15 +24,27 @@ export const metadata: Metadata = {
   description: "Google Developer Groups on Campus",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: ReactNode;
 }) {
+  let navigation: NavigationItem[] = [];
+
+  try {
+    const response = await getNavigation();
+
+    if (response.success && Array.isArray(response.data)) {
+      navigation = response.data;
+    }
+  } catch (error) {
+    console.error("Failed to load navigation:", error);
+  }
+
   return (
     <html lang="id" className={googleSans.variable}>
       <body>
-        <Navbar />
+        <Navbar navigation={navigation} />
         {children}
         <Footer />
       </body>
