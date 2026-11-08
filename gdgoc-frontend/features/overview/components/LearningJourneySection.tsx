@@ -6,9 +6,9 @@ export default async function LearningJourneySection() {
   try {
     const response = await getJourney();
 
-    if (!response.success) {
-      throw new Error("Failed to load learning journey");
-    }
+      if (!response.success || !Array.isArray(response.data)) {
+        throw new Error("Failed to load learning journey");
+      }
 
     const steps = response.data.map((item) => ({
       id: item.id,
