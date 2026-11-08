@@ -1,3 +1,4 @@
+"use client";
 
 import type { InquiryCategory } from "@/types/api";
 import { ArrowRightIcon } from "@/components/shared/icons";
@@ -25,7 +26,13 @@ export default function ContactForm({ categories }: ContactFormProps) {
         Fields marked * are required.
       </p>
 
-      <form className="mt-6 space-y-4">
+      <form
+        className="mt-6 space-y-4"
+        onSubmit={(event) => {
+          event.preventDefault();
+          alert("Form berhasil divalidasi. Pengiriman pesan belum tersedia.");
+        }}
+      >
         {/* First name and Last name */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
@@ -114,7 +121,7 @@ export default function ContactForm({ categories }: ContactFormProps) {
             id="category"
             name="category"
             required
-            defaultValue="joining-learning"
+            defaultValue={categories[0]?.id ?? ""}
             className="w-full rounded-lg border border-neutral-light-gray bg-neutral-white px-3 py-3 text-sm text-neutral-gray outline-none focus:border-brand-blue-primary"
           >
             {categories.map((category) => (
@@ -186,7 +193,7 @@ export default function ContactForm({ categories }: ContactFormProps) {
 
         <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
           <button
-            type="button"
+            type="submit"
             className="inline-flex w-fit items-center gap-3 rounded-lg bg-brand-blue-primary px-6 py-3.5 text-base font-semibold text-white transition hover:bg-brand-blue-hover"
           >
             Send message
